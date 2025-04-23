@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
+    "build-icon-check": "npm run build && echo 'Checking icons ...' && grep -oPR 'iconName:\"[^\"]+\",icon:[^}]+' dist/",
     "format": "prettier . --cache --write",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
     "lint:css": "stylelint \"**/*.css\"",
