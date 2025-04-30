@@ -1,7 +1,34 @@
 {{page-title "MyApp"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<table border="1">
+  <thead>
+  <tr>
+    <th>Expression</th>
+    <th>Value</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>typeof store.modelFor('example')</td>
+    <td><code>{{this.typeof this.example}}</code></td>
+  </tr>
+  <tr>
+    <td>store.modelFor('example').modelName</td>
+    <td><code>{{this.example.modelName}}</code></td>
+  </tr>
+  <tr>
+    <td>typeof Example.inverseFor('parent', store)</td>
+    <td><code>{{this.typeof this.inverse}}</code></td>
+  </tr>
+  {{#each (this.keys this.inverse) as |key|}}
+    <tr>
+      <td>typeof Example.inverseFor('parent', store).{{key}}</td>
+      <td><code>{{this.typeof (get this.inverse key)}}</code></td>
+    </tr>
+  {{/each}}
+  <tr>
+    <td>Example === Example.inverseFor('parent', store).type</td>
+    <td><code>{{this.equal this.example this.inverse.type}}</code></td>
+  </tr>
+  </tbody>
+</table>
