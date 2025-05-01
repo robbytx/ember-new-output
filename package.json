@@ -43,7 +43,7 @@
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
-    "ember-data": "~4.11.3",
+    "ember-data": "^4.12.8",
     "ember-fetch": "^8.1.2",
     "ember-load-initializers": "^2.1.2",
     "ember-modifier": "^4.1.0",
@@ -68,6 +68,10 @@
     "stylelint-prettier": "^3.0.0",
     "tracked-built-ins": "^3.1.1",
     "webpack": "^5.78.0"
+  },
+  "overrides": {
+    "@embroider/addon-shim@^1.5.0 <1.10": "~1.9",
+    "@embroider/macros@^1.8.3 <1.17": "~1.16"
   },
   "engines": {
     "node": "14.* || 16.* || >= 18"
